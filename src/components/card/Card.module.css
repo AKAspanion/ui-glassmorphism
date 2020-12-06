@@ -1,20 +1,22 @@
 .gl-card {
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  background: var(--gl-card-background);
-  backdrop-filter: blur(var(--gl-card-blur));
-  -webkit-backdrop-filter: blur(var(--gl-card-blur));
+  box-sizing: border-box;
+  color: var(--text-color);
 }
 
 .gl-card--outlined {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.18);
 }
 
 .gl-card.gl-card--light {
-  --gl-card-bg-color: 255, 255, 255;
+  --text-color: var(--g-text-color-light);
 }
 
 .gl-card.gl-card--dark {
-  --gl-card-bg-color: 0, 0, 0;
+  --text-color: var(--g-text-color-dark);
+}
+
+.gl-card.gl-card--elevation-1 {
+  box-shadow: 0 3px 32px 0 rgba(31, 38, 135, 0.07);
 }

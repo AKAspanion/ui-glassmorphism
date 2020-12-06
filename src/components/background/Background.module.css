@@ -1,5 +1,4 @@
 .gl-background {
-  min-height: 100vh;
   background-size: cover !important;
   background: var(--gl-background-value);
 }

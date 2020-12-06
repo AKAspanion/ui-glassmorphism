@@ -11,11 +11,14 @@ const Card = (props) => {
     className = '',
     color,
     blur = 4,
-    outlined = false,
-    transparency = 0.2
+    elevation,
+    outlined = true,
+    transparency = 0.25
   } = props
 
   const background = () => {
+    if (transparency === 0) return ''
+
     const colorLight = '255, 255, 255'
     const colorDark = '0, 0, 0'
 
@@ -42,6 +45,12 @@ const Card = (props) => {
     return `rgba(${rgbColor}, ${transparency})`
   }
 
+  const bgBlur = () => {
+    if (transparency === 0) return ''
+
+    return `blur(${blur}px)`
+  }
+
   const getClasses = (key) => {
     switch (key) {
       case 'card':
@@ -51,6 +60,7 @@ const Card = (props) => {
             gl-card 
             gl-card--${dark ? 'dark' : 'light'}
             ${outlined ? 'gl-card--outlined' : ''}
+            ${elevation ? `gl-card--elevation-${elevation}` : ''}
           `
         )
 
@@ -63,8 +73,8 @@ const Card = (props) => {
     <div
       style={{
         ...style,
-        '--gl-card-blur': `${blur}px`,
-        '--gl-card-background': background()
+        background: background(),
+        backdropFilter: bgBlur()
       }}
       className={`${getClasses('card')} ${className}`}
     >

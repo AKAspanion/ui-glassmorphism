@@ -8,8 +8,8 @@ export const RGBFromCSSColor = (color) => {
   canvas.style.position = 'absolute'
   canvas.style.border = '1px solid'
 
-  var body = document.getElementsByTagName('body')[0]
-  body.appendChild(canvas)
+  var fragment = document.createDocumentFragment()
+  fragment.appendChild(canvas)
 
   var ctx = canvas.getContext('2d')
   ctx.fillStyle = color
@@ -19,7 +19,7 @@ export const RGBFromCSSColor = (color) => {
 
   var colorArray = imgData.data.slice(2 * 4, 2 * 4 + 4)
 
-  document.getElementById('color-canvas').remove()
+  // document.getElementById('color-canvas').remove()
 
   return [colorArray[0], colorArray[1], colorArray[2]]
 }
