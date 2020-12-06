@@ -1,0 +1,15 @@
+.gl-background {
+  min-height: 100vh;
+  background-size: cover !important;
+  background: var(--gl-background-value);
+}
+
+.gl-background:before {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: var(--gl-background-width);
+  height: var(--gl-background-height);
+  backdrop-filter: blur(var(--gl-background-blur));
+}

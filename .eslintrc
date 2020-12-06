@@ -2,10 +2,7 @@
   "parser": "babel-eslint",
   "extends": [
     "standard",
-    "standard-react",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react"
+    "standard-react"
   ],
   "env": {
     "node": true
@@ -19,11 +16,11 @@
   },
   "settings": {
     "react": {
-      "version": "16"
+      "version": "17"
     }
   },
   "rules": {
-    "space-before-function-paren": 0,
+    "space-before-function-parent": 0,
     "react/prop-types": 0,
     "react/jsx-handler-names": 0,
     "react/jsx-fragments": 0,
