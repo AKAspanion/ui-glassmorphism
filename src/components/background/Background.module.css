@@ -1,6 +1,6 @@
 .gl-background {
   background-size: cover !important;
-  background: var(--gl-background-value);
+  /* background: var(--gl-background-value); */
 }
 
 .gl-background:before {

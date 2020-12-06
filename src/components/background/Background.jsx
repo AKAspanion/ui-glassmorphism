@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react'
 import styles from './Background.module.css'
 
@@ -18,14 +19,16 @@ const Background = (props) => {
     }
   }
 
-  const background = () => {
+  const backgroundStyle = () => {
     return img
-      ? `url(${img})`
-      : `linear-gradient(
-          90deg,
-          var(--gradient-left) 0%,
-          var(--gradient-right) 100%)
-        `
+      ? { backgroundImage: `url(${img})` }
+      : {
+          background: `linear-gradient(
+            90deg,
+            var(--gradient-left) 0%,
+            var(--gradient-right) 100%)
+          `
+        }
   }
 
   const getChildren = () => {
@@ -37,9 +40,9 @@ const Background = (props) => {
       style={{
         ...style,
         '--gl-background-blur': `${blur}px`,
-        '--gl-background-value': background(),
         '--gl-background-width': `${width}px`,
-        '--gl-background-height': `${height}px`
+        '--gl-background-height': `${height}px`,
+        ...backgroundStyle()
       }}
       ref={bgNode}
       className={`${getClasses('gl-background')} ${className}`}

@@ -45,8 +45,10 @@ const App = () => {
     <Background
       dark={false}
       style={{ minHeight: '100vh' }}
-      img={img}
-      blur={100}
+      img={
+        'https://raw.githubusercontent.com/AKAspanion/ui-glassmorphism/main/example/src/bg.jpg'
+      }
+      blur={0}
     >
       <div
         style={{
