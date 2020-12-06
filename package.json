@@ -1,10 +1,10 @@
 {
   "name": "ui-glassmorphism",
-  "version": "1.0.0",
-  "description": "React component library on &quot;glassmorphism&quot; UI/UX trend.",
-  "author": "AKAspanion",
+  "version": "0.0.0",
+  "description": "React component library on 'glassmorphism' UI/UX trend.",
+  "author": "Ankit Kumar Pandit",
   "license": "MIT",
-  "repository": "AKAspanion/ui-glassmorphism",
+  "repository": "https://github.com/AKAspanion/ui-glassmorphism",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -24,7 +24,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
@@ -43,8 +44,8 @@
     "gh-pages": "^2.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "^3.4.1"
   },
   "files": [

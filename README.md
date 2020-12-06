@@ -15,12 +15,12 @@ npm install --save ui-glassmorphism
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'ui-glassmorphism'
+import Card from 'ui-glassmorphism'
 import 'ui-glassmorphism/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Card />
   }
 }
 ```
