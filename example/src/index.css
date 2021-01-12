@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.activity__card__container::-webkit-scrollbar {
+  display: none;
+}
+
+.activity__card:last-of-type {
+  margin-right: 0px !important;
+}

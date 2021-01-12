@@ -1,8 +1,20 @@
 .gl-card {
   padding: 16px;
+  overflow: hidden;
   border-radius: 12px;
   box-sizing: border-box;
   color: var(--text-color);
+}
+
+.gl-card-shine {
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .gl-card--outlined {

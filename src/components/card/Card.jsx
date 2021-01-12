@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Card.module.css'
 
 import { getModuleClasses, RGBFromCSSColor } from '../../util'
+import { useResizeObserver } from '../../hooks'
 
 const Card = (props) => {
   const {
@@ -12,9 +13,15 @@ const Card = (props) => {
     color,
     blur = 4,
     elevation,
-    outlined = true,
-    transparency = 0.25
+    outlined = false,
+    transparency = 0.25,
+    shineOnHover = false
   } = props
+
+  const shine = React.useRef(null)
+  const cardNode = React.useRef(null)
+
+  const { width } = useResizeObserver(cardNode)
 
   const background = () => {
     if (transparency === 0) return ''
@@ -63,10 +70,25 @@ const Card = (props) => {
             ${elevation ? `gl-card--elevation-${elevation}` : ''}
           `
         )
-
       default:
-        break
+        return getModuleClasses(styles, key)
     }
+  }
+
+  const mouseMoveHandler = (event) => {
+    if (!shineOnHover) return
+
+    if (!event || !shine.current) return
+
+    event.preventDefault()
+    event.stopPropagation()
+    event.nativeEvent.stopImmediatePropagation()
+
+    const { pageX, pageY } = event
+    const { x: cardX, y: cardY } = event.target.getBoundingClientRect()
+
+    shine.current.style.top = `${pageY - cardY}px`
+    shine.current.style.left = `${pageX - cardX}px`
   }
 
   return (
@@ -76,8 +98,17 @@ const Card = (props) => {
         background: background(),
         backdropFilter: bgBlur()
       }}
+      ref={cardNode}
+      onMouseMoveCapture={mouseMoveHandler}
       className={`${getClasses('card')} ${className}`}
     >
+      {shineOnHover && (
+        <div
+          ref={shine}
+          className={getClasses('gl-card-shine')}
+          style={{ width: `${width * 2.5}px`, height: `${width * 2.5}px` }}
+        />
+      )}
       {children}
     </div>
   )
