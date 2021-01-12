@@ -5,7 +5,7 @@ import 'ui-glassmorphism/dist/index.css'
 
 import './index.css'
 
-import bg from './bg.jpg'
+import bg from './bg.webp'
 import book from './book.png'
 import play from './play.png'
 import laptop from './laptop.png'
